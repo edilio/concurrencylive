@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # perf2.py
 # requests/sec of fast requests
 
@@ -19,9 +20,10 @@ def monitor():
 Thread(target=monitor).start()
 
 while True:
-    sock.send(b'1')
+    # sock.send(b'1')
+    sock.send(b'1\r') #  use this for golang server
     resp =sock.recv(100)
     n += 1
 
 
-    
+
